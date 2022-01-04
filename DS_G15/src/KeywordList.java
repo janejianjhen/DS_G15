@@ -5,7 +5,21 @@ private ArrayList<Keyword> lst;
 	
 	public KeywordList(){
 		this.lst = new ArrayList<Keyword>();
+		add(new Keyword("BTS", -2));
+		add(new Keyword("優惠", 5));
+		add(new Keyword("方案", 5));
+		add(new Keyword("Apple", 5));
+		add(new Keyword("學生", 3));
+		add(new Keyword("折扣", 4));
+		add(new Keyword("韓團", -3));
+		add(new Keyword("教育", 5));
+		add(new Keyword("價格", 2));
+		add(new Keyword("開學季", 3));
     }
+	
+	public ArrayList<Keyword> getKeywordList(){
+		return lst;
+	}
 	
 	public void add(Keyword keyword){
 		lst.add(keyword);
