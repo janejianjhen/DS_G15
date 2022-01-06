@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLDecoder;
 import java.util.HashMap;
 
 import org.jsoup.Jsoup;
@@ -82,27 +83,47 @@ public class GoogleQuery {
 			try 
 
 			{
-				String citeUrl = li.select("a").get(0).attr("href");
+				String citeUrl = li.select("a").get(0).attr("href"); 
 				String title = li.select("a").get(0).select(".vvjwJb").text();
 				if(title.equals("")) {
 					continue;
 				}
 				System.out.println(title + ","+citeUrl);
 				retVal.put(title, citeUrl);
-
+				
+				/*String title = li.select("a").get(0).select(".vvjwJb").text();//li.select("h3").text();
+			    String citeUrl = "";
+			    if(title.length()>2)
+			    {
+			     if(li.select("a").get(0).attr("href").contains("http://")||li.select("a").get(0).attr("href").contains("https://"))
+			     {
+			      citeUrl = li.select("a").get(0).attr("href");//li.select("a").get(0).attr("href");
+			      if(citeUrl.substring(citeUrl.indexOf("&")-1,citeUrl.indexOf("&")).equals("/"))
+			      {
+			       citeUrl=URLDecoder.decode(citeUrl.substring(citeUrl.indexOf('=') + 1, citeUrl.indexOf('&')-1), "UTF-8");
+			       retVal.put(title, citeUrl);
+			      }
+			      citeUrl=URLDecoder.decode(citeUrl.substring(citeUrl.indexOf('=') + 1, citeUrl.indexOf('&')), "UTF-8");
+			      //System.out.println(title + ","+citeUrl);//absUrl
+			      retVal.put(title, citeUrl);
+			     }
+			    }*/
+			    
 			} catch (IndexOutOfBoundsException e) {
 
 //				e.printStackTrace();
-
+				
+				
+				
+			
+		
+		
 			}
 
-			
-
-		}
-
 		
-
+		}
 		return retVal;
-
+			
 	}
+	
 }
