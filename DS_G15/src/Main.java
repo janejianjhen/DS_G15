@@ -53,7 +53,8 @@ public class Main {
         int i=0;
         for (Element link : links){
         	if(link.attr("abs:href").startsWith(url)&&!link.attr("abs:href").equals(url)&&!link.attr("abs:href").startsWith(url+"#")
-        			&&!link.attr("abs:href").startsWith(url+"/#")&&!link.attr("abs:href").equals(url+"/")&&!link.attr("abs:href").endsWith("jpg")){//link.attr("title")!=null&&link.attr("abs:href").contains(url+"&")||link.attr("abs:href").contains(url+"/")
+        			&&!link.attr("abs:href").startsWith(url+"/#")&&!link.attr("abs:href").equals(url+"/")&&!link.attr("abs:href").endsWith("jpg")){
+        		//link.attr("title")!=null&&link.attr("abs:href").contains(url+"&")||link.attr("abs:href").contains(url+"/")
         		title=link.attr("title");
         		if(title==""){
         			if(!link.text().isEmpty()){
@@ -62,8 +63,8 @@ public class Main {
         				spLinks+="              ("+title+","+link.attr("abs:href")+")\n";
         			}
         		}else{
-        		subpages.put(title,link.attr("abs:href"));
-        		spLinks+="              ("+title+","+link.attr("abs:href")+")\n";
+        			subpages.put(title,link.attr("abs:href"));
+        			spLinks+="              ("+title+","+link.attr("abs:href")+")\n";
         		}
         	}
         }
