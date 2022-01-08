@@ -1,9 +1,9 @@
 
 public class Keyword {
 	public String name;
-	public int weight;
+	public double weight;
 	
-	public Keyword(String name,int weight){
+	public Keyword(String name,double weight){
 		this.name = name;
 		this.weight = weight;
 	}
