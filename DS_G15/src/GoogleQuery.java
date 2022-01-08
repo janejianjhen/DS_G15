@@ -84,7 +84,7 @@ public class GoogleQuery
 		ArrayList<String> retVal = new ArrayList<String>();
 		Document doc = Jsoup.parse(content);
 		Elements lis = doc.select("div.BNeawe.s3v9rd.AP7Wnd.lRVwie");
-		System.out.print("¬ÛÃö·j´M: ");
+		System.out.print("ç›¸é—œæœå°‹: ");
 		for(Element li : lis){
 		try { 
 				String title = li.text();

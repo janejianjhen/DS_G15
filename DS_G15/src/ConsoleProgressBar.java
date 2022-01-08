@@ -11,7 +11,7 @@ public class ConsoleProgressBar {
 		this.showChar = showChar;
 	}
 	
-	//µe«ü©wªø«×­ÓshowChar
+	//ç•«æŒ‡å®šé•·åº¦å€‹showChar
 	public void show(int value) {
 		reset();
 		float rate = (float) (value*1.0 / this.max_size);
@@ -34,7 +34,7 @@ public class ConsoleProgressBar {
 			System.out.print(' ');
 		}
 	}
-	//¥ú¼Ð²¾°Ê¨ì¦æ­º
+	//å…‰æ¨™ç§»å‹•åˆ°è¡Œé¦–
 	private void reset() {
 		System.out.print("\r");
 	}

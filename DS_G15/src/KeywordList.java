@@ -7,7 +7,7 @@ public class KeywordList  {
 		this.lst = new ArrayList<Keyword>();
 		add(new Keyword(filter, 10));
 		add(new Keyword("BTS"+filter, 20));
-		add(new Keyword("¨¾¼u¤Ö¦~¹Î"+filter, 20));
+		add(new Keyword("é˜²å½ˆå°‘å¹´åœ˜"+filter, 20));
 		
 	}
 	

@@ -5,7 +5,7 @@ public class WebNode {
 	public WebNode parent;
 	public ArrayList<WebNode> children;
 	public WebPage webPage; //child element
-	public double nodeScore;//main element This node's score += all its children癒礎s nodeScore
+	public double nodeScore;//main element This node's score += all its childrens nodeScore
  
 	public WebNode(WebPage webPage){
 		this.webPage = webPage;
