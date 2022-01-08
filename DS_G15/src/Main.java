@@ -24,7 +24,7 @@ public class Main {
 		System.out.println("Filter keyword:");
 		String filter="";
 		filter+=in.next();
-		System.out.print(filter);
+//		System.out.print(filter);
 		KeywordList keywords = new KeywordList(filter);
 		for(int i=0;i<keywords.getList().size();i++){
 			//System.out.println(keywords.getList().get(i).toString());
