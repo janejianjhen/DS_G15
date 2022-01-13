@@ -5,7 +5,9 @@ public class KeywordList  {
  
 	public KeywordList(String filter){
 		this.lst = new ArrayList<Keyword>();
-		add(new Keyword(filter, 10));
+		if(filter != "") {
+			add(new Keyword(filter, 10));
+		}
 		add(new Keyword("BTS"+filter, 20));
 		add(new Keyword("防彈少年團"+filter, 20));
 		

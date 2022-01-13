@@ -47,13 +47,17 @@ public class Website extends HttpServlet {
 			return;
 		}
 		
-		userInput = request.getParameter("keyword");
+		userInput = request.getParameter("keyword");;
+		
 		filter = request.getParameter("filter");
-	
+		if(filter == null) filter = ""; 
+
+
+		
 		
 		KeywordList keywords = new KeywordList(filter);
 		for(int i=0;i<keywords.getList().size();i++){
-			//System.out.println(keywords.getList().get(i).toString());
+			System.out.println(keywords.getList().get(i).toString());
 		}
 		
 		HashMap<String,String> webName=new GoogleQuery(userInput).query();
@@ -136,16 +140,22 @@ public class Website extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+    public static void notEmpty(String string) {
+        if (string == null || string.length() == 0)
+            throw new IllegalArgumentException("String must not be empty");
+    }
 
 	public static HashMap<String,String> getSubpage(String url, String filter) throws IOException
 	{
 		try {
+			//System.out.println(url);
 			Document doc = Jsoup.connect(url).get();
 	        Elements links = doc.select("a");
 	        String title="";
 	        HashMap<String,String> subpages=new HashMap<String,String>();
 	        for (Element link : links){
-	        	
+	        if(filter != "") {
 	        	if(link.attr("title").indexOf(filter, 0)!= -1)
 	        	{
 	        		title=link.attr("title");
@@ -160,6 +170,7 @@ public class Website extends HttpServlet {
 	        			subpages.put(title,link.attr("abs:href"));
 	        		}
 	            }
+	        }
 	        }
 	        return subpages;
 	    }
